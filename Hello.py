@@ -8,7 +8,7 @@ from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
 
-class(unittest.TestCase):
+class UntitledTestCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
@@ -16,26 +16,10 @@ class(unittest.TestCase):
         self.verificationErrors = []
         self.accept_next_alert = True
 
-    def test_(self):
+    def test_untitled_test_case(self):
         driver = self.driver
-        driver.get("https://test.fabrikant.ru/")
-        driver.find_element_by_xpath("//button[@type='button']").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-        driver.find_element_by_name("login[username]").click()
-        driver.find_element_by_name("login[username]").clear()
-        driver.find_element_by_name("login[username]").send_keys("fabrikant")
-        driver.find_element_by_name("login[password]").click()
-        driver.find_element_by_name("login[password]").clear()
-        driver.find_element_by_name("login[password]").send_keys("Qqqq111!")
-        driver.find_element_by_xpath(
-            u"(.//*[normalize-space(text()) and normalize-space(.)='Отмена'])[1]/following::span[1]").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-        driver.find_element_by_xpath("//div[@id='root']/div/header/div/div[4]/div/div/div/a/span/p[3]").click()
-        driver.find_element_by_xpath("//div[@id='root']/div[2]/div/div/div[23]/div/div/h2/div/a/p").click()
-        driver.find_element_by_xpath("//div[@id='wrapper']/section[2]/div/button/span/span").click()
-        driver.find_element_by_xpath("//div[@id='popupImportFromOOS']/div/div/div[3]/button[5]/span/span").click()
-        driver.find_element_by_css_selector("svg._2lO4aRo-GdqweyXs88LYXA > use").click()
-        driver.find_element_by_xpath("//div[3]/center/input[2]").click()
+        driver.get(
+            "https://www.google.com/search?q=dgdg&oq=dgdg&aqs=chrome..69i57j46i175i199i512j46i512j0i1i10i512j0i512j0i1i10i512j0i512j0i1i10i512j0i512l2.627j0j4&sourceid=chrome&ie=UTF-8")
 
     def is_element_present(self, how, what):
         try:
